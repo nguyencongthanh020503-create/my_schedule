@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Trình Cá Nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        thead {
+            background-color: #0d47a1;
+        }
+        
+        th {
+            padding: 16px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #ffffff;
+        }
+        
+        th:first-child {
+            width: 20%;
+        }
+        
+        th:last-child {
+            width: 40%;
+        }
+        
+        tbody tr {
+            border-bottom: 1px solid #2d2d2d;
+            transition: background-color 0.2s;
+        }
+        
+        tbody tr:hover {
+            background-color: #252525;
+        }
+        
+        tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        td {
+            padding: 14px 12px;
+            vertical-align: top;
+        }
+        
+        .time-slot {
+            font-weight: 600;
+            color: #bb86fc;
+        }
+        
+        .activity {
+            font-weight: 500;
+            color: #ffffff;
+        }
+        
+        .notes {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .golden-hour {
+            background-color: rgba(187, 134, 252, 0.1);
+            border-left: 3px solid #bb86fc;
+        }
+        
+        .essential {
+            background-color: rgba(3, 218, 198, 0.1);
+            border-left: 3px solid #03dac6;
+        }
+        
+        .weekend-row {
+            background-color: rgba(66, 66, 66, 0.5);
+        }
+        
+        .weekend-row td {
+            font-style: italic;
+            text-align: center;
+            color: #b0b0b0;
+        }
+        
+        @media (max-width: 768px) {
+            th, td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            
+            th:first-child {
+                width: 25%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            th, td {
+                padding: 10px 6px;
+                font-size: 0.85rem;
+            }
+            
+            .notes {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Khung Giờ</th>
+                    <th>Hoạt Động</th>
+                    <th>Ghi Chú</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="essential">
+                    <td class="time-slot">05:00 - 05:15</td>
+                    <td class="activity">Thức dậy & Kích hoạt</td>
+                    <td class="notes">Rửa mặt nước lạnh, uống nước, vận động nhẹ</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">05:15 - 05:30</td>
+                    <td class="activity">Lập kế hoạch</td>
+                    <td class="notes">Xác định mục tiêu code cho các khung giờ vàng</td>
+                </tr>
+                <tr class="golden-hour">
+                    <td class="time-slot">05:30 - 07:30</td>
+                    <td class="activity">LÀM WEBSITE / CODE</td>
+                    <td class="notes">Khung giờ vàng 1 - Tập trung vào tính năng phức tạp</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">07:30 - 08:00</td>
+                    <td class="activity">Ăn sáng & Thư giãn</td>
+                    <td class="notes">Ăn nhẹ, nghe nhạc thư giãn</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">08:00 - 10:00</td>
+                    <td class="activity">TOEIC (Kỹ năng Nghe)</td>
+                    <td class="notes">Luyện nghe chủ động khi não còn tỉnh táo</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">10:00 - 10:15</td>
+                    <td class="activity">Giải lao</td>
+                    <td class="notes">Đi lại, vươn vai, không sử dụng điện thoại</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">10:15 - 12:00</td>
+                    <td class="activity">CTDL & GT (Lý thuyết)</td>
+                    <td class="notes">Học cấu trúc hoặc thuật toán mới</td>
+                </tr>
+                <tr class="essential">
+                    <td class="time-slot">12:00 - 13:00</td>
+                    <td class="activity">Nghỉ trưa & Chợp mắt</td>
+                    <td class="notes">Bắt buộc chợp mắt 20 phút để phục hồi năng lượng</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">13:00 - 15:00</td>
+                    <td class="activity">CTDL & GT (Thực hành)</td>
+                    <td class="notes">Làm bài tập, code demo trên LeetCode</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">15:00 - 15:15</td>
+                    <td class="activity">Giải lao ngắn</td>
+                    <td class="notes">-</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">15:15 - 17:00</td>
+                    <td class="activity">TOEIC (Đọc) & Ôn tập</td>
+                    <td class="notes">Làm đề đọc hiểu, ôn tập từ vựng</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">17:00 - 18:30</td>
+                    <td class="activity">Thể dục & Ăn tối</td>
+                    <td class="notes">Quan trọng - Giải tỏa căng thẳng, nạp năng lượng</td>
+                </tr>
+                <tr class="golden-hour">
+                    <td class="time-slot">18:30 - 21:30</td>
+                    <td class="activity">LÀM WEBSITE / CODE</td>
+                    <td class="notes">Khung giờ vàng 2 - Debug, hoàn thiện tính năng</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">21:30 - 22:00</td>
+                    <td class="activity">Tổng kết & RẢI CV</td>
+                    <td class="notes">2-3 ngày/tuần: Rải CV. Ngày còn lại: Ôn tập</td>
+                </tr>
+                <tr>
+                    <td class="time-slot">22:00 - 22:30</td>
+                    <td class="activity">Thư giãn trước khi ngủ</td>
+                    <td class="notes">Đọc sách giấy, nghe nhạc nhẹ</td>
+                </tr>
+                <tr class="essential">
+                    <td class="time-slot">22:30 - 05:00</td>
+                    <td class="activity">ĐI NGỦ</td>
+                    <td class="notes">Không được cắt xén - Nền tảng cho mọi nỗ lực</td>
+                </tr>
+                <tr class="weekend-row">
+                    <td colspan="3">CHỦ NHẬT: Ngày nạp năng lượng - Ngủ bù, thể thao, lên kế hoạch tuần mới</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
