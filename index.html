@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon cho app -->
-    <link rel="icon" type="image/png" href="timetable.png">
-    <link rel="apple-touch-icon" href="timetable.png">
-    
     <title>Lịch Trình Cá Nhân</title>
     <style>
         * {
@@ -15,7 +12,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, sans-serif;
         }
-        
+
         body {
             background-color: #121212;
             color: #e0e0e0;
@@ -25,12 +22,12 @@
             align-items: center;
             padding: 20px;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1000px;
         }
-        
+
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
@@ -39,11 +36,11 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-        
+
         thead {
             background-color: #0d47a1;
         }
-        
+
         th {
             padding: 16px 12px;
             text-align: left;
@@ -51,99 +48,110 @@
             font-size: 1rem;
             color: #ffffff;
         }
-        
+
         th:first-child {
             width: 20%;
         }
-        
+
         th:last-child {
             width: 40%;
         }
-        
+
         tbody tr {
             border-bottom: 1px solid #2d2d2d;
             transition: background-color 0.2s;
         }
-        
+
         tbody tr:hover {
             background-color: #252525;
         }
-        
+
         tbody tr:last-child {
             border-bottom: none;
         }
-        
+
         td {
             padding: 14px 12px;
             vertical-align: top;
         }
-        
+
         .time-slot {
             font-weight: 600;
             color: #bb86fc;
         }
-        
+
         .activity {
             font-weight: 500;
             color: #ffffff;
         }
-        
+
         .notes {
             color: #a0a0a0;
             font-size: 0.9rem;
             line-height: 1.4;
         }
-        
+
         .golden-hour {
             background-color: rgba(187, 134, 252, 0.1);
             border-left: 3px solid #bb86fc;
         }
-        
+
         .essential {
             background-color: rgba(3, 218, 198, 0.1);
             border-left: 3px solid #03dac6;
         }
-        
+
         .weekend-row {
             background-color: rgba(66, 66, 66, 0.5);
         }
-        
+
         .weekend-row td {
             font-style: italic;
             text-align: center;
             color: #b0b0b0;
         }
-        
+
+        .table-header {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 30px;
+            width: 100%;
+        }
+
         @media (max-width: 768px) {
-            th, td {
+
+            th,
+            td {
                 padding: 12px 8px;
                 font-size: 0.9rem;
             }
-            
+
             th:first-child {
                 width: 25%;
             }
         }
-        
+
         @media (max-width: 480px) {
             body {
                 padding: 10px;
             }
-            
-            th, td {
+
+            th,
+            td {
                 padding: 10px 6px;
                 font-size: 0.85rem;
             }
-            
+
             .notes {
                 font-size: 0.8rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <table class="schedule-table">
+            <div class="table-header"></div>
             <thead>
                 <tr>
                     <th>Khung Giờ</th>
@@ -239,4 +247,5 @@
         </table>
     </div>
 </body>
+
 </html>
